@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # CICD
 
 CI/CD (Continuous Integration/Continuous Delivery) is a software development approach that emphasizes frequent integration, automated testing, and streamlined deployment.
