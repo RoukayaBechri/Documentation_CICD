@@ -61,4 +61,28 @@ docker run --name doc -p 8080:3000 image_name:v1
 docker ps -a
 ##remove all stopped containers from your Docker environment
 docker container prune
-docker run --name doc -p 8080:3000 rde:v1 -->
+docker run --name doc -p 8080:3000 rde:v1
+docker -compose up ::::run docker compose file
+
+-->
+
+## Dockerization for developement
+
+```Dockerfile
+FROM node:18.15.0-alpine as build
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+EXPOSE 3000
+RUN npm run build
+
+## nginx:stable-alpine image is a popular base image for running NGINX web servers in Docker containers
+FROM nginx:stable-alpine as deploy
+WORKDIR /app
+## copies the contents of the /app/build directory from the build stage to the /usr/share/nginx/html/ directory in the NGINX deployment stage.
+COPY --from=build /app/build /usr/share/nginx/html/
+```
+
+<!-- docker build . -t rde:v1
+docker run --name doc1 -p 8000:80 rde:v1 -->
