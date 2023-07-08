@@ -1,6 +1,6 @@
 ---
 - name: Install Docker
-  hosts: hosts
+  hosts: ec2
   become: true
 
   tasks:
