@@ -1,15 +1,13 @@
 ---
-- name: Pull Docker image from Nexus
-  hosts: localhost
-  become: yes
+- name: Docker Operations
+  hosts: ec2
+  gather_facts: false
   tasks:
-    - name: Log in to Nexus Docker registry
-      docker_login:
-        registry_url: "http://localhost:8085"
-        username: "admin"
-        password: "nexus"
+    - name: Docker Login
+      command: docker login -u "{{ DOCKERHUB_USERNAME }}" -p "{{ DOCKERHUB_PASSWORD }}"
 
-    - name: Pull Docker image
-      docker_image:
-        name: "http://localhost:8085/doc:v1"
-        source: pull
+    - name: Docker Pull
+      command: docker pull doc:v1
+
+    - name: Docker Run
+      command: docker run -d -p 80:80 --name "{{ container_name }}" "{{ image_name }}:{{ tag }}"
