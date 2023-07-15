@@ -2,6 +2,7 @@
 - name: Docker Operations
   hosts: ec2
   gather_facts: false
+  become: true
   tasks:
     - name: Docker Login
       command: docker login -u "{{ DOCKERHUB_USERNAME }}" -p "{{ DOCKERHUB_PASSWORD }}"
