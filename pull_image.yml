@@ -8,7 +8,7 @@
       command: docker login -u "{{ DOCKERHUB_USERNAME }}" -p "{{ DOCKERHUB_PASSWORD }}"
 
     - name: Docker Pull
-      command: docker pull {{ DOCKERHUB_USERNAME }}/{{ image_name }}:{{ tag }}
+      command: docker pull {{ image_name }}:{{ tag }}
 
     - name: Docker Run
       command: docker run -d -p 80:80 --name "{{ container_name }}" "{{ image_name }}:{{ tag }}"
