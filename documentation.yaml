@@ -1,0 +1,37 @@
+# documentation.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: documentation-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: documentation-pod
+  template:
+    metadata:
+      labels:
+        app: documentation-pod
+    spec:
+      containers:
+        - name: documentation-container
+          image: dockerusername2023/doc:v2
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: documentation-service
+spec:
+  selector:
+    app: documentation-pod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+

@@ -25,7 +25,7 @@ EXPOSE 3000
 CMD ["npm","start"]
 ```
 
-then Create .dockerignore file to specify which files and directories should be excluded from the Docker build context when building a Docker image. In our case we have ignore node_modules folder.
+then Create .dockerignore file to specify which files and directories should be excluded from the Docker build context when building a Docker image. In our case we have to ignore node_modules folder.
 
 then add **--host 0.0.0.0** to package.json to allow your application to listen on all available network interfaces.So the application will be accessible from outside the container.
 

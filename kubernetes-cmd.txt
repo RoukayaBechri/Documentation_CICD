@@ -1,0 +1,26 @@
+docker tag doc:v1 dockerusername2023/doc:v2
+docker push dockerusername2023/doc:v2  
+
+kubectl apply -f .\documentation.yaml 
+kubectl get pods
+kubectl get pods -w
+kubectl get services
+####### res ######
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+documentation-service   ClusterIP   10.104.234.83   <none>        80/TCP    28m
+kubernetes              ClusterIP   10.96.0.1       <none>        443/TCP   62m
+kubectl port-forward service/documentation-service 8089:80 
+
+
+
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml 
+
+generate password
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
+
+
+# access to argo cd
+https://localhost:8099/
+
