@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: documentation-deployment
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: documentation-pod
