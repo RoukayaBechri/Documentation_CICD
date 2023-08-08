@@ -17,10 +17,220 @@ kubectl port-forward service/documentation-service 8089:80
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml 
 
+Microsoft Windows [Version 10.0.22621.1992]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+'$oldPath' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Windows\System32>if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+') was unexpected at this time.
+
+C:\Windows\System32>  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Windows\System32>}
+'}' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Windows\System32>$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+'$oldPath' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Windows\System32>if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+') was unexpected at this time.
+
+C:\Windows\System32>  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Windows\System32>}
+'}' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Windows\System32>minikube start
+* minikube v1.31.1 on Microsoft Windows 11 Home Single Language 10.0.22621.1992 Build 22621.1992
+* Automatically selected the docker driver. Other choices: hyperv, virtualbox, ssh
+* Using Docker Desktop driver with root privileges
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Downloading Kubernetes v1.27.3 preload ...
+    > preloaded-images-k8s-v18-v1...:  393.19 MiB / 393.19 MiB  100.00% 1.78 Mi
+    > gcr.io/k8s-minikube/kicbase...:  447.62 MiB / 447.62 MiB  100.00% 1.93 Mi
+* Creating docker container (CPUs=2, Memory=3900MB) ...
+* Preparing Kubernetes v1.27.3 on Docker 24.0.4 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+! Executing "docker container inspect minikube --format={{.State.Status}}" took an unusually long time: 2.03296s
+* Restarting the docker service may improve performance.
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Windows\System32>docker pps
+docker: 'pps' is not a docker command.
+See 'docker --help'
+
+C:\Windows\System32>docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED             STATUS             PORTS                                                                                                                                  NAMES
+f748c0a4193c   gcr.io/k8s-minikube/kicbase:v0.0.40   "/usr/local/bin/entr…"   About an hour ago   Up About an hour   127.0.0.1:52254->22/tcp, 127.0.0.1:52255->2376/tcp, 127.0.0.1:52257->5000/tcp, 127.0.0.1:52253->8443/tcp, 127.0.0.1:52256->32443/tcp   minikube
+c72212794c3e   jenkins/jenkins:2.387.2-lts-jdk11     "/usr/bin/tini -- /u…"   2 weeks ago         Up 39 minutes      0.0.0.0:50000->50000/tcp, 0.0.0.0:8081->8080/tcp                                                                                       jenkins-lts
+
+C:\Windows\System32>curl localhost:8092
+<!doctype html><html lang="en"><head><title>HTTP Status 404 – Not Found</title><style type="text/css">h1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} h2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} h3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} b {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} p {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;} a {color:black;} a.name {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1></body></html>
+C:\Windows\System32>
+C:\Windows\System32>curl localhost:8098
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Platforme de gestion des objectifs</title>
+
+    <base href="/">
+    <!--     Fonts and icons     -->
+    <!--       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+ -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+    <script src="https://cdn.ckeditor.com/4.18.0/full-all/ckeditor.js"></script>
+  <style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}body{color:#2c2c2c;font-size:14px;font-family:Montserrat,Helvetica Neue,Arial,sans-serif;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}@media screen and (max-width: 991px){}:root{--surface-a:#ffffff;--surface-b:#f8f9fa;--surface-c:#e9ecef;--surface-d:#dee2e6;--surface-e:#ffffff;--surface-f:#ffffff;--text-color:#495057;--text-color-secondary:#6c757d;--primary-color:#2196F3;--primary-color-text:#ffffff;--font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;--surface-0:#ffffff;--surface-50:#FAFAFA;--surface-100:#F5F5F5;--surface-200:#EEEEEE;--surface-300:#E0E0E0;--surface-400:#BDBDBD;--surface-500:#9E9E9E;--surface-600:#757575;--surface-700:#616161;--surface-800:#424242;--surface-900:#212121;--gray-50:#FAFAFA;--gray-100:#F5F5F5;--gray-200:#EEEEEE;--gray-300:#E0E0E0;--gray-400:#BDBDBD;--gray-500:#9E9E9E;--gray-600:#757575;--gray-700:#616161;--gray-800:#424242;--gray-900:#212121;--content-padding:1rem;--inline-spacing:.5rem;--border-radius:3px;--surface-ground:#f8f9fa;--surface-section:#ffffff;--surface-card:#ffffff;--surface-overlay:#ffffff;--surface-border:#dee2e6;--surface-hover:#e9ecef;--maskbg:rgba(0, 0, 0, .4);--focus-ring:0 0 0 .2rem #a6d5fa;color-scheme:light}*{box-sizing:border-box}:root{--blue-50:#f4fafe;--blue-100:#cae6fc;--blue-200:#a0d2fa;--blue-300:#75bef8;--blue-400:#4baaf5;--blue-500:#2196f3;--blue-600:#1c80cf;--blue-700:#1769aa;--blue-800:#125386;--blue-900:#0d3c61;--green-50:#f6fbf6;--green-100:#d4ecd5;--green-200:#b2ddb4;--green-300:#90cd93;--green-400:#6ebe71;--green-500:#4caf50;--green-600:#419544;--green-700:#357b38;--green-800:#2a602c;--green-900:#1e4620;--yellow-50:#fffcf5;--yellow-100:#fef0cd;--yellow-200:#fde4a5;--yellow-300:#fdd87d;--yellow-400:#fccc55;--yellow-500:#fbc02d;--yellow-600:#d5a326;--yellow-700:#b08620;--yellow-800:#8a6a19;--yellow-900:#644d12;--cyan-50:#f2fcfd;--cyan-100:#c2eff5;--cyan-200:#91e2ed;--cyan-300:#61d5e4;--cyan-400:#30c9dc;--cyan-500:#00bcd4;--cyan-600:#00a0b4;--cyan-700:#008494;--cyan-800:#006775;--cyan-900:#004b55;--pink-50:#fef4f7;--pink-100:#fac9da;--pink-200:#f69ebc;--pink-300:#f1749e;--pink-400:#ed4981;--pink-500:#e91e63;--pink-600:#c61a54;--pink-700:#a31545;--pink-800:#801136;--pink-900:#5d0c28;--indigo-50:#f5f6fb;--indigo-100:#d1d5ed;--indigo-200:#acb4df;--indigo-300:#8893d1;--indigo-400:#6372c3;--indigo-500:#3f51b5;--indigo-600:#36459a;--indigo-700:#2c397f;--indigo-800:#232d64;--indigo-900:#192048;--teal-50:#f2faf9;--teal-100:#c2e6e2;--teal-200:#91d2cc;--teal-300:#61beb5;--teal-400:#30aa9f;--teal-500:#009688;--teal-600:#008074;--teal-700:#00695f;--teal-800:#00534b;--teal-900:#003c36;--orange-50:#fff8f2;--orange-100:#fde0c2;--orange-200:#fbc791;--orange-300:#f9ae61;--orange-400:#f79530;--orange-500:#f57c00;--orange-600:#d06900;--orange-700:#ac5700;--orange-800:#874400;--orange-900:#623200;--bluegray-50:#f7f9f9;--bluegray-100:#d9e0e3;--bluegray-200:#bbc7cd;--bluegray-300:#9caeb7;--bluegray-400:#7e96a1;--bluegray-500:#607d8b;--bluegray-600:#526a76;--bluegray-700:#435861;--bluegray-800:#35454c;--bluegray-900:#263238;--purple-50:#faf4fb;--purple-100:#e7cbec;--purple-200:#d4a2dd;--purple-300:#c279ce;--purple-400:#af50bf;--purple-500:#9c27b0;--purple-600:#852196;--purple-700:#6d1b7b;--purple-800:#561561;--purple-900:#3e1046;--red-50:#fff5f5;--red-100:#ffd1ce;--red-200:#ffada7;--red-300:#ff8980;--red-400:#ff6459;--red-500:#ff4032;--red-600:#d9362b;--red-700:#b32d23;--red-800:#8c231c;--red-900:#661a14;--primary-50:#f4fafe;--primary-100:#cae6fc;--primary-200:#a0d2fa;--primary-300:#75bef8;--primary-400:#4baaf5;--primary-500:#2196f3;--primary-600:#1c80cf;--primary-700:#1769aa;--primary-800:#125386;--primary-900:#0d3c61}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
+  <body>
+    <app-root>
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+    </app-root>
+  <script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script>
+
+</body></html>
+C:\Windows\System32>minikube
+minikube provisions and manages local Kubernetes clusters optimized for development workflows.
+
+Basic Commands:
+  start            Starts a local Kubernetes cluster
+  status           Gets the status of a local Kubernetes cluster
+  stop             Stops a running local Kubernetes cluster
+  delete           Deletes a local Kubernetes cluster
+  dashboard        Access the Kubernetes dashboard running within the minikube cluster
+  pause            pause Kubernetes
+  unpause          unpause Kubernetes
+
+Images Commands:
+  docker-env       Provides instructions to point your terminal's docker-cli to the Docker Engine inside minikube.
+(Useful for building docker images directly inside minikube)
+  podman-env       Configure environment to use minikube's Podman service
+  cache            Manage cache for images
+  image            Manage images
+
+Configuration and Management Commands:
+  addons           Enable or disable a minikube addon
+  config           Modify persistent configuration values
+  profile          Get or list the current profiles (clusters)
+  update-context   Update kubeconfig in case of an IP or port change
+
+Networking and Connectivity Commands:
+  service          Returns a URL to connect to a service
+  tunnel           Connect to LoadBalancer services
+
+Advanced Commands:
+  mount            Mounts the specified directory into minikube
+  ssh              Log into the minikube environment (for debugging)
+  kubectl          Run a kubectl binary matching the cluster version
+  node             Add, remove, or list additional nodes
+  cp               Copy the specified file into minikube
+
+Troubleshooting Commands:
+  ssh-key          Retrieve the ssh identity key path of the specified node
+  ssh-host         Retrieve the ssh host key of the specified node
+  ip               Retrieves the IP address of the specified node
+  logs             Returns logs to debug a local Kubernetes cluster
+  update-check     Print current and latest version number
+  version          Print the version of minikube
+  options          Show a list of global command-line options (applies to all commands).
+
+Other Commands:
+  completion       Generate command completion for a shell
+  license          Outputs the licenses of dependencies to a directory
+
+Use "minikube <command> --help" for more information about a given command.
+
+C:\Windows\System32>minikube image load frontend:v1
+
+C:\Windows\System32>minikube service front-service --url
+* service default/front-service has no node port
+http://127.0.0.1:57514
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Windows\System32>minikube image load backend:v1
+
+C:\Windows\System32>minikube image load mysql:8.0
+
+C:\Windows\System32>minikube service back-service --url
+* service default/back-service has no node port
+http://127.0.0.1:57651
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Windows\System32>minikube service front-service --url
+* service default/front-service has no node port
+http://127.0.0.1:57939
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+
 generate password
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
 
 
 # access to argo cd
 https://localhost:8099/
+
+
+
+
+
+az login 
+Microsoft Windows [Version 10.0.22621.1992]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\RokayaDev>az login
+A web browser has been opened at https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+Terminate batch job (Y/N)? y
+
+C:\Users\RokayaDev>az login
+A web browser has been opened at https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize. Please continue the login in the web browser. If no web browser is available or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "1d35311b-ddda-46f3-a5c7-9cdde238f9ab",
+    "id": "d137079e-ef62-45d9-bbe5-73b147825672",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Azure for Students",
+    "state": "Enabled",
+    "tenantId": "1d35311b-ddda-46f3-a5c7-9cdde238f9ab",
+    "user": {
+      "name": "chamseddine.abderrahim@gmail.com",
+      "type": "user"
+    }
+  }
+]
+
+
+
+
+terraform init 
+terraform plan
+terraform apply
+
+az aks get-credentials --resource-group gm-app --name gm-app
+
+
 

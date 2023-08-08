@@ -50,7 +50,6 @@ then run the command **docker build** (it used to build a Docker image based on 
 ```bash
 docker build . -t image_name:v1
 ```
-
 then run **docker run** command
 
 ```bash
